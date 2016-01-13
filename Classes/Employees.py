@@ -1,3 +1,13 @@
+import mysql.connector
+
+
+database_connector = mysql.connector.connect(user='codecooler', password = 'Nehezjelszo2%',
+                                            host = "127.0.0.1")
+
+cursor = database_connector.cursor()
+cursor.execute("USE SANDBOX;")
+
+
 class Employees:
 
     def __init__(self, EmployeeID, LastName, FirstName, Title, TitleOfCourtesy,

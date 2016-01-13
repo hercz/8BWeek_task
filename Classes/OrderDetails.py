@@ -21,7 +21,6 @@ class Orderdetails:
     @staticmethod
     def parse(row):
         parsed_row = row.split(";")
-
         orderdetails = Orderdetails()
         orderdetails.OrderID = parsed_row[0]
         orderdetails.ProductID = parsed_row[1]
