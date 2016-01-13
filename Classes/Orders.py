@@ -10,7 +10,15 @@ cursor.execute("USE SANDBOX;")
 class Orders:
 
     def persist(self):
-        cursor.execute("INSERT INTO Orders VALUES ({},{},{},{},{},{},{},{},{},{},{},{},{},{},{});".format(self.OrderID,
+        print(("INSERT INTO Orders VALUES ({},{},{},{},{},{},{},{},{},{},{},{},{},{});".format(self.OrderID,
+                                                                self.CustomerID, self.EmployeeID,
+                                                                self.OrderDate, self.RequiredDate,
+                                                                self.ShippedDate, self.ShipVia, self.Freight, self.ShipName,
+                                                                self.ShipAddress, self.ShipCity, self.ShipRegion,
+                                                                self.ShipPostalCode, self.ShipCountry)))
+
+
+        cursor.execute("INSERT INTO Orders VALUES ({},{},{},{},{},{},{},{},{},{},{},{},{},{});".format(self.OrderID,
                                                                 self.CustomerID, self.EmployeeID,
                                                                 self.OrderDate, self.RequiredDate,
                                                                 self.ShippedDate, self.ShipVia, self.Freight, self.ShipName,
@@ -43,7 +51,7 @@ class Orders:
     @staticmethod
     def data_reader(csv_file):
         csv_rows = []
-        with open(csv_file, "r") as file:
+        with open(csv_file, "r", encoding="utf8") as file:
             for row in file:
                 csv_rows.append(row)
         return csv_rows
