@@ -1,5 +1,5 @@
 import mysql.connector
-import csv
+
 
 database_connector = mysql.connector.connect(user='codecooler', password = 'Nehezjelszo2%',
                                             host = "127.0.0.1")
