@@ -38,8 +38,9 @@ class Orderdetails:
                 csv_rows.append(row)
         return csv_rows
 
+
     def caller(self):
-        rows = Orderdetails.data_reader("./CSV_FILES/order_details.csv")
+        rows = Orderdetails.data_reader("../CSV_FILES/order_details.csv")
         for i in range(1, len(rows)):
             orderdetails = Orderdetails.parse(rows[i])
             orderdetails.persist()
