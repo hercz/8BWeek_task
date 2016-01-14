@@ -18,13 +18,13 @@ class Customers:
                                                                           self.PostalCode, self.Country, self.Phone,
                                                                           self.Fax))
 
-        cursor.execute("INSERT INTO customers VALUES ({},{},{},{},{},{},{},{},{},{},{});".format(self.CustomerID,
+        cursor.execute("INSERT INTO customers VALUES ('{}','{}','{}','{}','{}','{}','{}','{}','{}','{}','{}');".format(self.CustomerID,
                                                                                                     self.CompanyName,
                                                                                   self.ContactName,self.ContactTitle,
                                                                                   self.Address, self.City, self.Region,
                                                                                   self.PostalCode, self.Country, self.Phone,
                                                                                   self.Fax))
-        # database_connector.commit()
+        database_connector.commit()
 
     @staticmethod
     def parse(row):
