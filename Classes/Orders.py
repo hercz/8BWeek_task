@@ -10,7 +10,7 @@ cursor.execute("USE SANDBOX;")
 class Orders:
 
     def persist(self):
-        print(("INSERT INTO Orders VALUES ({},{},{},{},{},{},{},{},{},{},{},{},{},{});".format(self.OrderID,
+        print(("INSERT INTO Orders VALUES ({},'{}',{},'{}','{}','{}',{},{},'{}','{}','{}','{}','{}','{}');".format(self.OrderID,
                                                                 self.CustomerID, self.EmployeeID,
                                                                 self.OrderDate, self.RequiredDate,
                                                                 self.ShippedDate, self.ShipVia, self.Freight, self.ShipName,
@@ -18,7 +18,9 @@ class Orders:
                                                                 self.ShipPostalCode, self.ShipCountry)))
 
 
-        cursor.execute("INSERT INTO Orders VALUES ({},{},{},{},{},{},{},{},{},{},{},{},{},{});".format(self.OrderID,
+        cursor.execute("""INSERT INTO Orders (OrderID, CustomerID,EmployeeID,OrderDate,RequiredDate,ShippedDate,
+                          ShipVia,Freight,ShipName,ShipAddress,ShipCity,ShipRegion,ShipPostalCode,ShipCountry) VALUES
+                          ({},'{}',{},'{}','{}','{}',{},{},'{}','{}','{}','{}','{}',{});""".format(self.OrderID,
                                                                 self.CustomerID, self.EmployeeID,
                                                                 self.OrderDate, self.RequiredDate,
                                                                 self.ShippedDate, self.ShipVia, self.Freight, self.ShipName,
