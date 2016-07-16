@@ -1,1 +1,3 @@
-# 8BWeek_task
+# 8B_PY_WeeklyTask
+
+[Codecool](https://codecool.hu/) school project.
